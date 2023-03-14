@@ -1,0 +1,126 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Sono', sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: #023;
+    color: #E4E5E6;
+    overflow: auto;
+}
+
+/* Settings form */
+
+.form_line {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+.form_line:last-of-type {
+    margin: 0;
+}
+
+.form_line label {
+    flex-grow: 1;
+    padding-right: 1rem;
+}
+
+.form_line input[type="number"] {
+    width: 60px;
+    text-align: right;
+    font-size: 1rem;
+}
+
+/* Control buttons */
+
+.timer_controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 2rem;
+    background-color: #356;
+}
+
+.timer_controls button {
+    font-size: 1rem;
+    margin: 0 1rem;
+}
+
+#startBtn {
+    color: #00a494;
+    font-weight: bold;
+}
+
+#stopBtn {
+    color: #ca3d00;
+    font-weight: bold;
+}
+
+/* Status panel */
+
+.timer_status header {
+    color: #888;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+}
+
+.timer_status .box.left_align {
+    text-align: left;
+}
+
+.timer_overview .box {
+    flex: 0 0 50%;
+    margin-bottom: 1rem;
+}
+
+.timer_overview {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.timer_overview .box {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#timerOverviewMessage,
+#elapsedInInterval,
+#elapsedInBreakInterval {
+    font-size: 3rem;
+}
+
+#timerOverviewMessage,
+#elapsedInBreakIntervalBox {
+    display: none;
+}
+
+#timerOverviewMessage {
+    text-align: center;
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.timer_additional_info {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+}
+
+.timer_additional_info .box {
+    text-align: right;
+    flex: 1 0 33%;
+    padding: 1rem;
+    margin-bottom: .5rem;
+    box-sizing: border-box;
+}

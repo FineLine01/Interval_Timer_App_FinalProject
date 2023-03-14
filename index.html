@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval Timer App</title>
+
+    <link rel="stylesheet" href="/css/index.css">
+
+    <script src="/js/timerApp.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Timer settings -->
+    <div class="settings_form">
+        <div class="form_line">
+            <label for="intervalCountInput">Interval count:</label>
+            <input type="number" id="intervalCountInput" min="1">
+        </div>
+        <div class="form_line">
+            <label for="intervalDurationInput">Interval duration:</label>
+            <input type="number" id="intervalDurationInput" min="1">
+        </div>
+        <div class="form_line">
+            <label for="enableBreakInput">Enable break:</label>
+            <input type="checkbox" id="enableBreakInput">
+        </div>
+        <div class="form_line" id="breakDurationInputLine">
+            <label for="breakDurationInput">Break duration:</label>
+            <input type="number" id="breakDurationInput" min="1">
+        </div>
+    </div>
+
+
+    <!-- Timer buttons -->
+    <div class="timer_controls">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="stopBtn">Stop</button>
+    </div>
+
+
+    <!-- Status panel -->
+    <div class="timer_status">
+        <div class="timer_overview">
+            <div id="timeOverviewMessage">Finish!</div>
+
+            <div class="box" id="elapsedInIntervalBox">
+                <header>&nbsp;</header>
+                <span id="elapsedInInterval"></span>
+            </div>
+
+            <div class="box" id="elapsedInBreakIntervalBox">
+                <header>Break time</header>
+                <span id="elapsedInBreakInterval"></span>
+            </div>
+
+            <div class="timer_additional_info">
+                <div class="box left_align">
+                    <header>Intervals</header>
+                    <div id="intervals"></div>
+                </div>
+                <div class="box">
+                    <header>Intervals done</header>
+                    <div id="intervalsDone"></div>
+                </div>
+                <div class="box">
+                    <header>Intervals remaining</header>
+                    <div id="intervalsRemaining"></div>
+                </div>
+
+                <div class="box left_align">
+                    <header>Total time </header>
+                    <span id="totalTime"></span>
+                </div>
+                <div class="box">
+                    <header>Total time elapsed</header>
+                    <span id="totalTimeElapsed"></span>
+                </div>
+                <div class="box">
+                    <header>Total time remaining</header>
+                    <span id="totalTimeRemaining"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
