@@ -124,3 +124,34 @@ body {
     margin-bottom: .5rem;
     box-sizing: border-box;
 }
+
+/* Layout */
+
+.main_container {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-areas: "status" "controls" "settings";
+    margin-bottom: 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.timer_status {
+    grid-area: status;
+}
+
+.timer_controls {
+    grid-area: controls;
+}
+
+.settings_form {
+    grid-area: settings;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .main_container {
+        grid-template-columns: repeat(2, calc(50% - 2rem / 2));
+        grid-template-areas: "status status" "settings controls";
+    }
+}
