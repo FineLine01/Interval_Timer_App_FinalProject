@@ -22,3 +22,9 @@
    - Flexbox
    - Grid 
  - JavaScript 
+   - *Immediately Invoked Function Expression* (IIFE)
+   - Ternary expression
+   - `AddEventListener` to buttons, field inputs.
+   - Execute a function at a regular interval.
+   - Convert numbers into a string.
+   - Get the smallest/biggest value with `Math.min()` / `Math.max()`
