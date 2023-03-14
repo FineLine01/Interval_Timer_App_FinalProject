@@ -18,6 +18,7 @@
 
  ### What will be used: 
  - HTML5
- - CSS Grid
- - CSS Flexbox
+ - CSS
+   - Flexbox
+   - Grid 
  - JavaScript 
