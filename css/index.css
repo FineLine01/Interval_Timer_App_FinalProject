@@ -15,7 +15,13 @@ body {
     overflow: auto;
 }
 
+
 /* Settings form */
+
+.settings-form {
+    border: 1px solid #CCC;
+    padding: 2rem;
+  }
 
 .form_line {
     display: flex;
@@ -29,7 +35,7 @@ body {
 
 .form_line label {
     flex-grow: 1;
-    padding-right: 1rem;
+    padding-right: .5rem;
 }
 
 .form_line input[type="number"] {
@@ -64,6 +70,13 @@ body {
     color: #ca3d00;
     font-weight: bold;
 }
+
+@media only screen and (min-width: 768px) {
+    .timer_controls button {
+      font-size: 2rem;
+      margin: 1rem;
+    }
+  }
 
 /* Status panel */
 

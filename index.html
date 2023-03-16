@@ -15,7 +15,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="main_container">
+       <div class="main_container">
         
             <!-- Status panel -->
     <div class="timer_status">
@@ -31,6 +31,7 @@
                 <header>Break time</header>
                 <span id="elapsedInBreakInterval"></span>s
             </div>
+     </div>
 
             <div class="timer_additional_info">
                 <div class="box left_align">
@@ -60,13 +61,13 @@
                 </div>
             </div>
         </div>
-    </div>
+    
     
     <!-- Timer buttons -->
     <div class="timer_controls">
-        <button id="startBtn">Start</button>
-        <button id="pauseBtn">Pause</button>
-        <button id="stopBtn">Stop</button>
+        <button type="button" id="startBtn">Start</button>
+        <button type="button" id="pauseBtn">Pause</button>
+        <button type="button" id="stopBtn">Stop</button>
     </div>
 
         <!-- Timer settings -->
@@ -88,6 +89,7 @@
             <input type="number" id="breakDurationInput" min="1">
         </div>
     </div>
+</div> 
 
 
     </div>
