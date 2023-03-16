@@ -10,23 +10,25 @@ body {
     font-family: 'Sono', sans-serif;
     font-size: 1rem;
     padding: 1rem;
-    background-color: #023;
-    color: #E4E5E6;
+    background-image: url(/imgs/abstract-bw.jpg);
+    color: #000000;
     overflow: auto;
 }
 
 
 /* Settings form */
 
-.settings-form {
-    border: 1px solid #CCC;
+.settings_form {
     padding: 2rem;
+    border-radius: 1rem;
+    background-color: rgba(175, 175, 175, 0.539);
   }
 
 .form_line {
     display: flex;
     align-items: baseline;
     margin-bottom: 1rem;
+    
 }
 
 .form_line:last-of-type {
@@ -41,7 +43,9 @@ body {
 .form_line input[type="number"] {
     width: 60px;
     text-align: right;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    border: none;
+    font-family: 'Sono', sans-serif;
 }
 
 /* Control buttons */
@@ -53,27 +57,32 @@ body {
     justify-content: center;
     box-sizing: border-box;
     padding: 2rem;
-    background-color: #356;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.539);
 }
 
 .timer_controls button {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 0 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    padding: 1rem;
+    font-family: 'Sono', sans-serif;
 }
 
 #startBtn {
-    color: #00a494;
+    color: #3b6460;
     font-weight: bold;
 }
 
 #stopBtn {
-    color: #ca3d00;
+    color: #8c2a00;
     font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) {
     .timer_controls button {
-      font-size: 2rem;
       margin: 1rem;
     }
   }
@@ -81,9 +90,9 @@ body {
 /* Status panel */
 
 .timer_status header {
-    color: #888;
+    color: #000000;
     margin-bottom: .5rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .timer_status .box.left_align {
@@ -92,7 +101,7 @@ body {
 
 .timer_overview .box {
     flex: 0 0 50%;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;   
 }
 
 .timer_overview {
@@ -147,6 +156,9 @@ body {
     margin-bottom: 1rem;
     max-width: 960px;
     margin: 0 auto;
+    background-color: rgba(172, 211, 230, 0.539);
+    padding: 2rem;
+    border-radius: 1rem;
 }
 
 .timer_status {
