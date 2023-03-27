@@ -5,7 +5,7 @@
     window.addEventListener('load', onLoad);
   
     function onLoad() {
-      setTimerSettings(3, 60, true, 15);
+      setTimerSettings(3, 10, true, 5);
   
       initializeTimerControls();
       initializeStatusPanel();
@@ -13,6 +13,9 @@
       resetTimer();
     }
   
+
+    // Objects
+
     let
       formSettingsFields,
       timerControlsButtons,
@@ -34,6 +37,9 @@
       };
     }
   
+
+    //Update the timer info
+
     function resetTimer() {
       timer = {
         totalTimeElapsed: 0,
@@ -45,11 +51,13 @@
   
       updateInfo();
     }
-  
+
+    
     function initializeTimerSettingsForm() {
       const oneDayInSeconds = 60 * 60 * 24;
       let lastUserSetEnableBreak = timerSettings.enableBreak;
-  
+      
+      //Accessing the data by ID
       formSettingsFields = {
         intervalCount: document.getElementById('intervalCountInput'),
         intervalDuration: document.getElementById('intervalDurationInput'),
@@ -62,12 +70,14 @@
       formSettingsFields.enableBreak.checked = timerSettings.enableBreak;
       formSettingsFields.breakDuration.value = timerSettings.breakDuration;
 
-      // Apply min / max bounds  
+      // Apply min / max bounds (validate the data entered)
       function getNumberInBoundsOrDefault(value, min, max, def = 1) {
         const valueAsNumber = parseInt(value);
         return isNaN(valueAsNumber) ? def : Math.max(min, Math.min(valueAsNumber, max));
       }
   
+
+      //Take a boolean value (break display)
       function setBreakDurationLineDisplay(displayed) {
         const breakDurationInputLineElt = document.getElementById('breakDurationInputLine');
         breakDurationInputLineElt.style.display = displayed ? null : 'none';
@@ -108,6 +118,8 @@
         updateInfo();
       });
   
+
+      // Event handlers for input field
       formSettingsFields.breakDuration.addEventListener('input', () => {
         setTimerSettings(
           undefined, undefined, undefined,
@@ -134,7 +146,7 @@
     }
   
 
-    //Show the status panel
+    //Show the data on status panel
 
     function initializeStatusPanel() {
       statusPanel = {
@@ -171,8 +183,10 @@
     }
   
 
-    //Timer boolean logic
+    //Timer logic
 
+
+    // Event handlers logic implemented
     function startTimer() {
       setFormDisabledState(true);
       setTimerControlsDisabledState(true, false, false);
@@ -198,6 +212,7 @@
       resetTimer();
     }
   
+    //Timer ticking logic
     function startTimerTick() {
       timer.intervalId = setInterval(onTimerTick, 1000);
     }
@@ -238,6 +253,8 @@
       updateInfo();
     }
   
+
+    //Update the info on status panel
     function updateInfo() {
       statusPanel.timeOverviewMessage.style.display = timer.isFinished ? 'block' : null;
       statusPanel.elapsedInIntervalBox.style.display = timer.isFinished || timer.isBreak ? 'none' : null;
