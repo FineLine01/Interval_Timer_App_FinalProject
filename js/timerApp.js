@@ -1,5 +1,7 @@
 (() => {
 
+   //Default values when the page is loaded
+
     window.addEventListener('load', onLoad);
   
     function onLoad() {
@@ -59,7 +61,8 @@
       formSettingsFields.intervalDuration.value = timerSettings.intervalDuration;
       formSettingsFields.enableBreak.checked = timerSettings.enableBreak;
       formSettingsFields.breakDuration.value = timerSettings.breakDuration;
-  
+
+      // Apply min / max bounds  
       function getNumberInBoundsOrDefault(value, min, max, def = 1) {
         const valueAsNumber = parseInt(value);
         return isNaN(valueAsNumber) ? def : Math.max(min, Math.min(valueAsNumber, max));
@@ -70,6 +73,9 @@
         breakDurationInputLineElt.style.display = displayed ? null : 'none';
       }
   
+
+      //Event handlers for input field
+
       formSettingsFields.intervalCount.addEventListener('input', () => {
         const
           intervalCount = getNumberInBoundsOrDefault(formSettingsFields.intervalCount.value, 1, 999),
@@ -90,6 +96,9 @@
         updateInfo();
       });
   
+
+      //Event handlers for checking box
+
       formSettingsFields.enableBreak.addEventListener('change', () => {
         const enableBreak = formSettingsFields.enableBreak.checked;
   
@@ -108,6 +117,8 @@
       });
     }
   
+    // Controls buttons - event handlers
+
     function initializeTimerControls() {
       timerControlsButtons = {
         start: document.getElementById('startBtn'),
@@ -122,6 +133,9 @@
       timerControlsButtons.stop.addEventListener('click', stopTimer);
     }
   
+
+    //Show the status panel
+
     function initializeStatusPanel() {
       statusPanel = {
         timeOverviewMessage: document.getElementById('timeOverviewMessage'),
@@ -141,6 +155,8 @@
       };
     }
   
+  //Disable state set to avoid code duplication
+
     function setTimerControlsDisabledState(start, pause, stop) {
       timerControlsButtons.start.disabled = start;
       timerControlsButtons.pause.disabled = pause;
@@ -154,6 +170,9 @@
       formSettingsFields.breakDuration.disabled = disabled;
     }
   
+
+    //Timer boolean logic
+
     function startTimer() {
       setFormDisabledState(true);
       setTimerControlsDisabledState(true, false, false);
