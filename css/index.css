@@ -12,7 +12,7 @@ body {
     padding: 1rem;
     background-image: url(/imgs/abstract-bw.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
     color: #000000;
     overflow: auto;
 }
@@ -30,7 +30,6 @@ body {
     display: flex;
     align-items: baseline;
     margin-bottom: 1rem;
-    
 }
 
 .form_line:last-of-type {
@@ -60,7 +59,7 @@ body {
     box-sizing: border-box;
     padding: 2rem;
     border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.539);
+    background-color: rgba(175, 175, 175, 0.539);
 }
 
 .timer_controls button {
@@ -110,11 +109,15 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    background-color:  rgba(255, 255, 255, 0.539);
+    border-radius: 30px;
 }
 
 .timer_overview .box {
     text-align: center;
     font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+
 }
 
 #timerOverviewMessage,
@@ -147,6 +150,8 @@ body {
     padding: 1rem;
     margin-bottom: .5rem;
     box-sizing: border-box;
+    font-size: 2rem;
+    color: white;
 }
 
 /* Layout */
